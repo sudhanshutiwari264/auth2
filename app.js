@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+const userModel = require(`./models/user`) 
+
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
@@ -14,6 +16,11 @@ app.use(express.static(path.join(__dirname,'public')));
 
 app.get('/',(req, res)=>{
   res.render('index');
+});
+
+app.post('/create',async (req, res)=>{
+  let {username, email, password, age} = req.body;
+  console.log(username, email, password, age)
 });
 
 app.listen(3000);
