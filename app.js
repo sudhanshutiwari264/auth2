@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const path = require('path');
-const { emitWarning } = require('process');
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
